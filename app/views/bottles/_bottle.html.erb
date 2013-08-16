@@ -1,4 +1,6 @@
-<li>
+<li>                                                
+  <span class="title"><%= bottle.title %></span>
+  <span class="vintage"><%= bottle.vintage %></span>
   <span class="content"><%= bottle.content %></span>
   <span class="timestamp">
     Posted <%= time_ago_in_words(bottle.created_at) %> ago.

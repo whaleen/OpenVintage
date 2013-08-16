@@ -21,7 +21,7 @@ class BottlesController < ApplicationController
   private
 
     def bottle_params
-      params.require(:bottle).permit(:content)
+      params.require(:bottle).permit(:content, :title, :vintage)
     end
   
     def correct_user

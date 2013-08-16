@@ -1,7 +1,8 @@
 <li>
 
-<span data-tooltip class="has-tip" title='<%= link_to user.name, user %>'>
+<span title='<%= link_to user.name, user %>'>
   <%= gravatar_for user, size: 52 %>
+  <%= link_to user.name, user %>
 </span>
 
 
