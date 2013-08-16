@@ -17,7 +17,7 @@ describe User do
   it { should respond_to(:remember_token) }
   it { should respond_to(:authenticate) }
   it { should respond_to(:admin) }
-  it { should respond_to(:microposts) }
+  it { should respond_to(:bottles) }
   it { should respond_to(:feed) }
   it { should respond_to(:relationships) }
   it { should respond_to(:followed_users) }
@@ -124,46 +124,46 @@ describe User do
     its(:remember_token) { should_not be_blank }
   end
 
-  describe "micropost associations" do
+  describe "bottle associations" do
 
     before { @user.save }
-    let!(:older_micropost) do
-      FactoryGirl.create(:micropost, user: @user, created_at: 1.day.ago)
+    let!(:older_bottle) do
+      FactoryGirl.create(:bottle, user: @user, created_at: 1.day.ago)
     end
-    let!(:newer_micropost) do
-      FactoryGirl.create(:micropost, user: @user, created_at: 1.hour.ago)
-    end
-
-    it "should have the right microposts in the right order" do
-      expect(@user.microposts.to_a).to eq [newer_micropost, older_micropost]
+    let!(:newer_bottle) do
+      FactoryGirl.create(:bottle, user: @user, created_at: 1.hour.ago)
     end
 
-    it "should destroy associated microposts" do
-      microposts = @user.microposts.to_a
+    it "should have the right bottles in the right order" do
+      expect(@user.bottles.to_a).to eq [newer_bottle, older_bottle]
+    end
+
+    it "should destroy associated bottles" do
+      bottles = @user.bottles.to_a
       @user.destroy
-      expect(microposts).not_to be_empty
-      microposts.each do |micropost|
-        expect(Micropost.where(id: micropost.id)).to be_empty
+      expect(bottles).not_to be_empty
+      bottles.each do |bottle|
+        expect(Bottle.where(id: bottle.id)).to be_empty
       end
     end
 
     describe "status" do
       let(:unfollowed_post) do
-        FactoryGirl.create(:micropost, user: FactoryGirl.create(:user))
+        FactoryGirl.create(:bottle, user: FactoryGirl.create(:user))
       end
       let(:followed_user) { FactoryGirl.create(:user) }
 
       before do
         @user.follow!(followed_user)
-        3.times { followed_user.microposts.create!(content: "Lorem ipsum") }
+        3.times { followed_user.bottles.create!(content: "Lorem ipsum") }
       end
 
-      its(:feed) { should include(newer_micropost) }
-      its(:feed) { should include(older_micropost) }
+      its(:feed) { should include(newer_bottle) }
+      its(:feed) { should include(older_bottle) }
       its(:feed) { should_not include(unfollowed_post) }
       its(:feed) do
-        followed_user.microposts.each do |micropost|
-          should include(micropost)
+        followed_user.bottles.each do |bottle|
+          should include(bottle)
         end
       end
     end

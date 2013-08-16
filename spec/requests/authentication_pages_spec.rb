@@ -97,15 +97,15 @@ describe "Authentication" do
         end
       end
 
-      describe "in the Microposts controller" do
+      describe "in the Bottles controller" do
 
         describe "submitting to the create action" do
-          before { post microposts_path }
+          before { post bottle_path }
           specify { expect(response).to redirect_to(signin_path) }
         end
 
         describe "submitting to the destroy action" do
-          before { delete micropost_path(FactoryGirl.create(:micropost)) }
+          before { delete bottle_path(FactoryGirl.create(:bottle)) }
           specify { expect(response).to redirect_to(signin_path) }
         end
       end

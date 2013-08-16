@@ -1,10 +1,16 @@
+<div class="container">
+<div class="row">
+
 <% provide(:title, 'All users') %>
 <h1>Users</h1>
 
 <%= will_paginate %>
 
-<ul class="users">
+<ul class="users small-block-grid-2 large-block-grid-8">
   <%= render @users %>
 </ul>
 
 <%= will_paginate %>
+
+</div>
+</div>

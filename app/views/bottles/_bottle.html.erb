@@ -1,0 +1,11 @@
+<li>
+  <span class="content"><%= bottle.content %></span>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(bottle.created_at) %> ago.
+  </span>
+  <% if current_user?(bottle.user) %>
+    <%= link_to "delete", bottle, method: :delete,
+                                     data: { confirm: "You sure?" },
+                                     title: bottle.content %>
+  <% end %>
+</li>
