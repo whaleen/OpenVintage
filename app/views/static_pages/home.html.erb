@@ -7,15 +7,31 @@
       <section>
         <%= render 'shared/stats' %>
       </section>
-      <section>
-        <%= render 'shared/bottle_form' %>
-      </section>
+	<hr />
+	
+<section>
+	<a href="#" data-reveal-id="addBottle" class="small success button">Add Bottle</a>
+</section>
+	
+     
     </aside>
     <div class="large-6 columns">
       <h3>Bottle Feed</h3>
       <%= render 'shared/feed' %>
     </div>
   </div>  
+
+
+
+	<div id="addBottle" class="reveal-modal">
+	  <h3>Add Bottle</h3>
+      <%= render 'shared/bottle_form' %>
+	    <a class="close-reveal-modal">&#215;</a>
+	</div>
+
+
+
+
 <% else %>
   <div class="center hero-unit">
     <h1>Welcome to Open Vintage</h1>

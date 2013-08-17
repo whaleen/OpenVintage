@@ -22,6 +22,9 @@
       <%= render 'shared/stats' %>
     </section>
   </aside>
+
+
+
   <div class="large-8 columns">
     <%= render 'follow_form' if signed_in? %>
     <% if @user.bottles.any? %>
