@@ -1,19 +1,23 @@
 <% provide(:title, @user.name) %>
 
 <div class="row">
-  <aside class="large-4 columns">
-  <h1>
-  <%= fa_icon "reorder 4x muted", class: "pull-left" %> <%= @user.name %>
-  </h1>
+  <aside class="large-4 columns panel">
 
-    <%= gravatar_for @user %>
+<div class="row">
+<div class="large-2 columns">
+	<div class="circular">
+	  <%= gravatar_for @user %>
+	</div>
+</div>
+
+<div class="large-10 columns">
 	<%= current_user.handle %>
-	<hr />
-    <section>
+    <%= @user.bio %>
+</div>
+</div>
+	
 
-        <%= @user.bio %>
-    </section>
-<hr />
+
     <section>
       <%= render 'shared/stats' %>
     </section>

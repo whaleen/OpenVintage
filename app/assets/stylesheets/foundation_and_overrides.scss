@@ -670,13 +670,13 @@
 //
 
 // We use these to control the background and border styles
-// $panel-bg: darken(#fff, 5%);
+$panel-bg: #fafafa;
 // $panel-border-style: solid;
-   $panel-border-size: 0px;
+   $panel-border-size: 1px;
 
 // We use this % to control how much we darken things on hover
 // $panel-function-factor: 10%;
-// $panel-border-color: darken($panel-bg, $panel-function-factor);
+$panel-border-color: #e6e6e6;
 
 // We use these to set default inner padding and bottom margin
 // $panel-margin-bottom: emCalc(20px);
@@ -968,11 +968,11 @@
 //
 
 // Background color for the top bar
-$topbar-bg: #212D48 !default;
+$topbar-bg: #fafafa !default;
 
 
 // Height and margin
-// $topbar-height: 45px;
+$topbar-height: 55px;
 // $topbar-margin-bottom: emCalc(30px);
 
 // Control Input height for top bar
@@ -983,13 +983,13 @@ $topbar-bg: #212D48 !default;
 // $topbar-title-font-size: emCalc(17px);
 
 // Set the link colors and styles for top-level nav
-// $topbar-link-color: #fff;
+$topbar-link-color: #333;
 // $topbar-link-weight: bold;
 // $topbar-link-font-size: emCalc(13px);
 
 // Style the top bar dropdown elements
-// $topbar-dropdown-bg: #333;
-// $topbar-dropdown-link-color: #fff;
+$topbar-dropdown-bg: #fafafa;
+$topbar-dropdown-link-color: #333;
 // $topbar-dropdown-toggle-size: 5px;
 // $topbar-dropdown-toggle-color: #fff;
 // $topbar-dropdown-toggle-alpha: 0.5;
@@ -999,8 +999,8 @@ $topbar-bg: #212D48 !default;
 // $topbar-menu-link-transform: uppercase;
 // $topbar-menu-link-font-size: emCalc(13px);
 // $topbar-menu-link-weight: bold;
-// $topbar-menu-link-color: #fff;
-// $topbar-menu-icon-color: #fff;
+$topbar-menu-link-color: #333;
+$topbar-menu-icon-color: #666;
 // $topbar-menu-link-color-toggled: #888;
 // $topbar-menu-icon-color-toggled: #888;
 

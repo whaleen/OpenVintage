@@ -4,6 +4,8 @@ ruby '2.0.0'
 
 gem "font-awesome-rails"
 
+gem 'acts-as-taggable-on'
+
 #Authentication
 gem 'omniauth-twitter'  
 gem 'omniauth-facebook'  
