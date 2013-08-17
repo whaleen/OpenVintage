@@ -4,13 +4,6 @@ ruby '2.0.0'
 
 gem "font-awesome-rails"
 
-gem 'acts-as-taggable-on'
-
-#Authentication
-gem 'omniauth-twitter'  
-gem 'omniauth-facebook'  
-gem 'omniauth-google-oauth2'
-
 gem 'rails', '4.0.0'
 gem 'bcrypt-ruby', '3.0.1'
 gem 'faker', '1.1.2'
