@@ -1,12 +1,19 @@
 <% provide(:title, @user.name) %>
+
 <div class="row">
   <aside class="large-4 columns">
+  <h1>
+  <%= fa_icon "reorder 4x muted", class: "pull-left" %> <%= @user.name %>
+  </h1>
+
+    <%= gravatar_for @user %>
+	<%= current_user.handle %>
+	<hr />
     <section>
-      <h1>
-        <%= gravatar_for @user %>
-        <%= @user.name %>
-      </h1>
+
+        <%= @user.bio %>
     </section>
+<hr />
     <section>
       <%= render 'shared/stats' %>
     </section>
@@ -15,9 +22,9 @@
     <%= render 'follow_form' if signed_in? %>
     <% if @user.bottles.any? %>
       <h3>Bottles (<%= @user.bottles.count %>)</h3>
-      <ol class="bottles">
+      <ul class="small-block-grid-2 large-block-grid-3">
         <%= render @bottles %>
-      </ol>
+      </ul>
       <%= will_paginate @bottles %>
     <% end %>
   </div>

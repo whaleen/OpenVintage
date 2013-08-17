@@ -21,9 +21,11 @@
   <div class="large-8 columns">
     <h3><%= @title %></h3>
     <% if @users.any? %>
-      <ul class="users no-bullet">
+
+      <ul class="users small-block-grid-4">
         <%= render @users %>
       </ul>
+
       <%= will_paginate %>
     <% end %>
   </div>

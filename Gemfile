@@ -2,9 +2,12 @@ source 'https://rubygems.org'
 ruby '2.0.0'
 #ruby-gemset=railstutorial_rails_4_0
 
+gem "font-awesome-rails"
+
 #Authentication
-gem 'omniauth'
-gem 'omniauth-facebook', '1.4.0'
+gem 'omniauth-twitter'  
+gem 'omniauth-facebook'  
+gem 'omniauth-google-oauth2'
 
 gem 'rails', '4.0.0'
 gem 'bcrypt-ruby', '3.0.1'

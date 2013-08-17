@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130816194037) do
+ActiveRecord::Schema.define(version: 20130816213124) do
 
   create_table "bottles", force: true do |t|
     t.string   "content"
@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 20130816194037) do
     t.datetime "updated_at"
     t.string   "title"
     t.string   "vintage"
+    t.string   "producer"
+    t.string   "bio"
   end
 
   add_index "bottles", ["user_id", "created_at"], name: "index_bottles_on_user_id_and_created_at"
@@ -43,6 +45,8 @@ ActiveRecord::Schema.define(version: 20130816194037) do
     t.string   "password_digest"
     t.string   "remember_token"
     t.boolean  "admin"
+    t.string   "handle"
+    t.string   "bio"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
