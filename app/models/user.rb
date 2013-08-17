@@ -14,6 +14,15 @@ class User < ActiveRecord::Base
                     uniqueness: { case_sensitive: false }
   has_secure_password
   validates :password, length: { minimum: 6 }
+  
+  # Better URLs
+  # http://blog.nhocki.com/2012/01/22/beautiful-urls-in-rails-the-easy-way
+  make_permalink :handle
+  
+  def to_param
+    permalink
+  end
+  # end Better URLs
 
   def User.new_remember_token
     SecureRandom.urlsafe_base64
