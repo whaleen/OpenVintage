@@ -1,6 +1,7 @@
 <% if signed_in? %>
   <div class="row">
     <aside class="large-6 columns">
+	I'm the "Dashboard"
       <section>
         <%= render 'shared/user_info' %>
       </section>
@@ -10,7 +11,7 @@
 	<hr />
 	
 <section>
-	<a href="#" data-reveal-id="addBottle" class="small success button">Add Bottle</a>
+	<a href="#" data-reveal-id="addBottle" class="small radius success button">Add Bottle</a>
 </section>
 	
      
@@ -34,17 +35,9 @@
 
 <% else %>
   <div class="center hero-unit">
-    <h1>Welcome to Open Vintage</h1>
-
-    <h2>
-      This is the home page for the
-      <a href="#">Open Vintage</a>
-      smoke test application.
-    </h2>
-
+    
     <%= link_to "Sign up now!", signup_path, 
                                 class: "small radius button secondary" %>
   </div>
 
-  <%= link_to image_tag("logo.png", alt: "Open Vintage"), '#' %>
 <% end %> 

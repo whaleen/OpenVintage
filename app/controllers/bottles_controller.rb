@@ -1,6 +1,9 @@
 class BottlesController < ApplicationController
   before_action :signed_in_user, only: [:create, :destroy]
   before_action :correct_user,   only: :destroy
+  
+  def index
+    end
 
   def create
     @bottle = current_user.bottles.build(bottle_params)
@@ -29,3 +32,10 @@ class BottlesController < ApplicationController
       redirect_to root_url if @bottle.nil?
     end
 end
+
+
+def show
+  @bottle = Bottle.find(params[:id])
+  @user = @bottle.users.paginate(:page => params[:page])
+ end
+

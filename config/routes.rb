@@ -4,9 +4,12 @@ OpenVintage::Application.routes.draw do
       get :following, :followers
     end
   end
+
+  
   resources :sessions,      only: [:new, :create, :destroy]
-  resources :bottles,    only: [:create, :destroy]
+  resources :bottles, :only  => [:create, :destroy, :show]
   resources :relationships, only: [:create, :destroy]
+    
   root to: 'static_pages#home'
   match '/signup',  to: 'users#new',            via: 'get'
   match '/signin',  to: 'sessions#new',         via: 'get'
@@ -14,4 +17,6 @@ OpenVintage::Application.routes.draw do
   match '/help',    to: 'static_pages#help',    via: 'get'
   match '/about',   to: 'static_pages#about',   via: 'get'
   match '/contact', to: 'static_pages#contact', via: 'get'
+  match '/users/:username/:id', to: 'bottles#show', via: 'get', as: :user_bottles
+  
 end

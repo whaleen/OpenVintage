@@ -4,15 +4,17 @@
   <aside class="large-4 columns panel">
 
 <div class="row">
-<div class="large-2 columns">
+<div class="large-4 columns">
 	<div class="circular">
-	  <%= gravatar_for @user %>
+	  <%= gravatar_for @user, size: 90%><br />
+		<a href=""><%= @user.handle %></a>
 	</div>
 </div>
 
-<div class="large-10 columns">
-	<small><a href=""><%= @user.handle %></a></small><br />
-    <%= @user.bio %>
+<div class="large-8 columns">
+
+    <%= @user.name %>
+    <p><%= @user.bio %></p>
 </div>
 </div>
 	

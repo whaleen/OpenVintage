@@ -3,22 +3,25 @@
 			<%= link_to image_tag("bottle-tiny-50X50.png", alt: "Open Vintage", class: "radius th"), '#' %>
 		</div>
         <div class="small-9 large-10 columns">
-			<strong><%= feed_item.vintage %>: <%= feed_item.title %></strong> - <%= feed_item.content %>
+			<strong><%= feed_item.vintage %>: <span class="title"><%= link_to feed_item.title, @bottle %></span><br clear="all"></strong> - <%= feed_item.content %>
 			
 			<hr />
 			
 			from: <%= feed_item.producer %>
+			from: <%= feed_item.id %>
 			
 			<span class="timestamp">
-		      Posted <%= time_ago_in_words(feed_item.created_at) %> ago.
+		       <%= time_ago_in_words(feed_item.created_at) %> ago.
 		    </span>
 
           <ul class="inline-list">
-            <li><a href=""><%= link_to feed_item.user.name, feed_item.user %></a></li>
+            <li><%= link_to gravatar_for(feed_item.user, :size => 20), feed_item.user %><a href=""><%= link_to feed_item.user.name, feed_item.user %></a></li>
+<hr />
 			<li><% if current_user?(feed_item.user) %>
-			    <%= link_to "[x]", feed_item, method: :delete,
-			                                     data: { confirm: "Ur darn tooin right?" },
-			                                     title: feed_item.content %>
+			    <%= link_to "x", feed_item, method: :delete,
+			                                     data: { confirm: "Ur darn tootin right?" },
+			                                     title: feed_item.content, 
+												 class: "tiny radius alert button"%>
 			  <% end %></li>
           </ul>
 

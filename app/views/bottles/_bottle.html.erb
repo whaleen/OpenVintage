@@ -1,20 +1,26 @@
 <li>  
 
-<div class="panel-bottle">                                              
+<div class="panel-bottle">   
+
+
+                                           
   <span class="title"><small><%= bottle.vintage %></small><br /> <%= bottle.title %></span><br />
   <span class="producer"><%= bottle.producer %></span>
-<hr />
-  <span class="content"><%= bottle.content %></span>
+
+
+
+
+  <p class="content"><%= bottle.content %></p>
   <span class="timestamp">
     Posted <%= time_ago_in_words(bottle.created_at) %> ago.
   </span>
   <% if current_user?(bottle.user) %>
-
-	<hr />
-    <%= link_to "delete", bottle, method: :delete,
+	<br />
+ <%= link_to "x", bottle, method: :delete,
                                      data: { confirm: "You sure?" },
-                                     title: bottle.content %>
+                                     title: bottle.content%>
   <% end %>
+	<hr />
 
 </div>
 </li>
