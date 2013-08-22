@@ -29,7 +29,19 @@
 
   <div class="large-8 columns">
     <%= render 'follow_form' if signed_in? %>
-    <% if @user.bottles.any? %>
+    
+	
+	<!-- List user places -->
+	<% if @user.places.any? %>
+      <h3>Places (<%= @user.places.count %>)</h3>
+      <ul class="small-block-grid-2 large-block-grid-3">
+        <%= render @places %>
+      </ul>
+      <%= will_paginate @places %>
+    <% end %>
+
+	<!-- List user bottles -->
+	<% if @user.bottles.any? %>
       <h3>Bottles (<%= @user.bottles.count %>)</h3>
       <ul class="small-block-grid-2 large-block-grid-3">
         <%= render @bottles %>

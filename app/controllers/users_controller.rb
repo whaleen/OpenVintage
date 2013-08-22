@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @bottles = @user.bottles.paginate(page: params[:page])
+    @places = @user.places.paginate(page: params[:page])
   end
 
   def new

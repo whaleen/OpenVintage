@@ -8,6 +8,7 @@ OpenVintage::Application.routes.draw do
   
   resources :sessions,      only: [:new, :create, :destroy]
   resources :bottles, :only  => [:create, :destroy, :show]
+  resources :places, :only  => [:create, :destroy, :show]
   resources :relationships, only: [:create, :destroy]
     
   root to: 'static_pages#home'

@@ -1,0 +1,14 @@
+<div class="">
+<h3>Add Place</h3>
+<%= form_for(@place) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+
+<%= collection_select :places, :title, Place.select(:title).uniq.order('title ASC'), :title, :title, {:prompt => 'Select a Producer'},{:name => "producer_search"} %> 
+
+    <%= f.text_area :description, placeholder: "Description" %>
+  </div>
+  <%= f.submit "Add", class: "small radius button success" %>
+<% end %>
+
+</div>
